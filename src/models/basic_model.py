@@ -22,7 +22,7 @@ class BasicModel(Model):
             layers.MaxPooling2D(2),
 
             # 3rd Convolutional Layer
-            layers.Conv2D(32, 3, padding='same', activation='relu'),
+            layers.Conv2D(48, 3, padding='same', activation='relu'),
             layers.MaxPooling2D(2),
 
             # Flatten the results to feed into a DNN
