@@ -14,11 +14,11 @@ class BasicModel(Model):
             layers.MaxPooling2D(2),
 
             # 1st Convolutional Layer
-            layers.Conv2D(16, 3, padding='same', activation='relu'),
+            layers.Conv2D(32, 3, padding='same', activation='relu'),
             layers.MaxPooling2D(2),
 
             # 2nd Convolutional Layer
-            layers.Conv2D(32, 3, padding='same', activation='relu'),
+            layers.Conv2D(48, 3, padding='same', activation='relu'),
             layers.MaxPooling2D(2),
 
             # 3rd Convolutional Layer
@@ -29,7 +29,7 @@ class BasicModel(Model):
             layers.Flatten(),
 
             # Dense Layer
-            layers.Dense(32, activation='relu'),
+            layers.Dense(25, activation='relu'),
             layers.Dense(categories_count, activation='softmax')
         ])
     
