@@ -18,18 +18,22 @@ class BasicModel(Model):
             layers.MaxPooling2D(2),
 
             # 2nd Convolutional Layer
-            layers.Conv2D(48, 3, padding='same', activation='relu'),
+            layers.Conv2D(32, 3, padding='same', activation='relu'),
             layers.MaxPooling2D(2),
 
             # 3rd Convolutional Layer
             layers.Conv2D(48, 3, padding='same', activation='relu'),
             layers.MaxPooling2D(2),
 
+            # Dropout to stop overfitting
+            layers.Dropout(0.25),
+
             # Flatten the results to feed into a DNN
             layers.Flatten(),
 
-            # Dense Layer
-            layers.Dense(25, activation='relu'),
+            # Dense Layers w/ dropout
+            layers.Dense(32, activation='relu'),
+            layers.Dropout(0.25),
             layers.Dense(categories_count, activation='softmax')
         ])
     
