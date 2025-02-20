@@ -114,16 +114,6 @@ class UserWebcamPlayer:
         # Get the index of the highest probability class (0 for neutral, 1 for happy, 2 for surprise)
         emotion_index = int(np.argmax(prediction[0]))
         
-        # Debug information
-        print(f"Debug - Prediction array: {prediction[0]}")
-        print(f"Debug - Selected emotion index: {emotion_index}")
-        print(f"Debug - Categories available: {categories}")
-
-        # Ensure the emotion index is valid
-        if emotion_index >= len(categories):
-            print(f"Warning: Prediction out of range - defaulting to neutral")
-            return 0
-        
         return emotion_index
     
     def get_move(self, board_state):
