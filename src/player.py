@@ -98,15 +98,15 @@ class UserWebcamPlayer:
     def _get_emotion(self, img) -> int:
         resized_img = cv2.resize(img, image_size)
         
-        # Convert grayscale to RGB (if your model was trained on RGB)
+        # Convert grayscale to RGB
         rgb_img = cv2.cvtColor(resized_img, cv2.COLOR_GRAY2RGB)
         
         # Add batch dimension and normalize pixel values
         input_img = np.expand_dims(rgb_img, axis=0)
 
-        # Load your trained model if not already loaded
+        # Load trained model if not already loaded
         if not hasattr(self, 'model'):
-            self.model = load_model('results/basic_model_17_epochs_timestamp_1739904794.keras')
+            self.model = load_model('results/basic_model_9_epochs_timestamp_1739866133.keras')
         
         # Make prediction
         prediction = self.model.predict(input_img, verbose=0)
