@@ -52,6 +52,7 @@ if __name__ == "__main__":
     model_class = models[name]
     print('* Training {} for {} epochs'.format(name, epochs))
     model = model_class(input_shape, categories_count)
+    print("Printing the shape of the network")
     model.print_summary()
     history = model.train_model(train_dataset, validation_dataset, epochs)
     print('* Evaluating {}'.format(name))
